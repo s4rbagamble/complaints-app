@@ -1,0 +1,21 @@
+$theme-font: "Times New Roman", Times, serif;
+$theme-color: #000000;
+
+body {
+  font: $theme-font;
+  background-color: white;
+  color: $theme-color;
+}
+
+table {
+    font-family: $theme-font;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+

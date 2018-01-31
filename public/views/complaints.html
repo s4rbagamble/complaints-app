@@ -1,0 +1,22 @@
+<div>
+  <h1>Complaints per million units</h1>
+
+  <input type="button" value="Toggle" ng-click="ShowHide()" />
+
+  <div>
+  <table>
+    <tr>
+		  <th ng-show = "!IsVisible">Quarter</th>
+      <th ng-show = "IsVisible">Month</th>
+      <th>CPMU</th>
+    </tr>
+    <tr ng-repeat="record in records | orderBy: 'Month'">
+		  <td ng-show = "!IsVisible"><span class="styled-text" id='{{record.quarter}}'>{{record.Quarter}}</span></td>
+			<td ng-show = "IsVisible"><span class="styled-text" id='{{record.month}}'>{{record.Month | date:'dd MMMM yyyy'}}</span></td>
+			<td ng-show= "IsVisible"><span class="styled-text" id='{{cpmu}}'>{{ record.Complaints ? ((record.Complaints/record.UnitsSold)*1000000).toFixed(5) : '0.00000'}}</span></td>
+      <td ng-show= "!IsVisible"><span class="styled-text" id='{{cpmuTot}}'>{{ record.ComplaintsRunningTot ? ((record.ComplaintsRunningTot/record.UnitsSoldRunningTot)*1000000).toFixed(5) : '0.00000' }}</span></td>
+		</tr>
+  </table>
+  </div>
+
+</div>
